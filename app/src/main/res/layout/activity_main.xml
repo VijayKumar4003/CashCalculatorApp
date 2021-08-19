@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:text="Cash Calculator"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:textColor="#fff"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:id="@+id/t_layout"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/black_stroke"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtFinalCash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Total Cash : 0"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtFinalCashInWords"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="zero"
+            android:padding="8dp"
+            android:layout_marginBottom="2dp"
+            android:textColor="#000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/scroolView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_below="@+id/t_layout"
+        android:layout_above="@+id/m_layout"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <!-- The Currency Will be here -->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="6"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/two_thousand_note" />
+
+                <TextView
+
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="2000" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/cross" />
+
+                <EditText
+                    android:id="@+id/et2000"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/black_stroke"
+                    android:textColor="#000"
+                    android:textColorHint="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:hint="0" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="=" />
+
+                <TextView
+                    android:id="@+id/txt2000"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="6"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/five_hundred_note" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="500" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/cross" />
+
+                <EditText
+                    android:id="@+id/et500"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/black_stroke"
+                    android:textColor="#000"
+                    android:textColorHint="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:hint="0" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="=" />
+
+                <TextView
+                    android:id="@+id/txt500"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="6"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/two_hundred_note" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="200" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/cross" />
+
+                <EditText
+                    android:id="@+id/et200"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/black_stroke"
+                    android:textColor="#000"
+                    android:textColorHint="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:hint="0" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="=" />
+
+                <TextView
+                    android:id="@+id/txt200"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="6"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/one_hundred" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="100" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/cross" />
+
+                <EditText
+                    android:id="@+id/et100"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/black_stroke"
+                    android:textColor="#000"
+                    android:textColorHint="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:hint="0" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="=" />
+
+                <TextView
+                    android:id="@+id/txt100"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="6"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/fifty_note" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="50" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/cross" />
+
+                <EditText
+                    android:id="@+id/et50"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/black_stroke"
+                    android:textColor="#000"
+                    android:textColorHint="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:hint="0" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="=" />
+
+                <TextView
+                    android:id="@+id/txt50"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="6"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/twenty_note" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="20" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/cross" />
+
+                <EditText
+                    android:id="@+id/et20"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/black_stroke"
+                    android:textColor="#000"
+                    android:textColorHint="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:hint="0" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="=" />
+
+                <TextView
+                    android:id="@+id/txt20"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="6"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ten_note" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="10" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/cross" />
+
+                <EditText
+                    android:id="@+id/et10"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/black_stroke"
+                    android:textColor="#000"
+                    android:textColorHint="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:hint="0" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="=" />
+
+                <TextView
+                    android:id="@+id/txt10"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="6"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/five_note" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="5" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/cross" />
+
+                <EditText
+                    android:id="@+id/et5"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/black_stroke"
+                    android:textColor="#000"
+                    android:textColorHint="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:hint="0" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="=" />
+
+                <TextView
+                    android:id="@+id/txt5"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="6"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/two_note" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="2" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/cross" />
+
+                <EditText
+                    android:id="@+id/et2"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/black_stroke"
+                    android:textColor="#000"
+                    android:textColorHint="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:hint="0" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="=" />
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="6"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/one_note" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="1" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/cross" />
+
+                <EditText
+                    android:id="@+id/et1"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/black_stroke"
+                    android:textColor="#000"
+                    android:textColorHint="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:hint="0" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="=" />
+
+                <TextView
+                    android:id="@+id/txt1"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="0" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/m_layout"
+        android:layout_width="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:background="@color/colorPrimary"
+            android:text="Reset" />
+    </LinearLayout>
+
+</RelativeLayout>
